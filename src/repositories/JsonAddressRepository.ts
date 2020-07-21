@@ -17,8 +17,6 @@ class JsonAddressRepository extends AddressRepository {
       this.addresses = JSON.parse(fs.readFileSync(this.filepath).toString()).data.list;
     }
   }
-
-  
 }
 
 export default JsonAddressRepository;

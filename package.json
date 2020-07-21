@@ -4,6 +4,7 @@
   "description": "Well Technical test",
   "main": "main.js",
   "scripts": {
+    "process": "npx ts-node src/main.ts",
     "test": "mocha -r ts-node/register tests/**/*.test.ts",
     "coverage": "nyc --reporter=text -e .ts -x \"*.test.ts\" npm run test"
   },

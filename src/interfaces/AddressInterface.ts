@@ -1,10 +1,10 @@
 interface AddressInterface {
-  name: String;
-  addressLine1: String;
-  addressLine2: String;
-  city: String;
-  postcode: String;
-  phone: String;
+  name: string;
+  addressLine1: string;
+  addressLine2: string;
+  city: string;
+  postcode: string;
+  phone: string;
 }
 
 export default AddressInterface;

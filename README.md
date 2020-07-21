@@ -74,17 +74,57 @@ Sample data:
 
 
 ## Execution
-Fairly standard node.js / typescript setup
+Fairly standard node.js / typescript setup, process script takes 2 optional arguments (path to json file and amount of entries to display)
+
 
 ```bash
 npm install
-npm run test
+npm run process
 ```
 Which should return something along the lines of
 
 ```
+Assuming data/data.json is the json file and 5 is the amount of histogram entries you want to output
+ - Using json file path: data/data.json
+ - Number of entries to display: 5
+M22 - 16 (5.1%)
+M6 - 16 (5.1%)
+M40 - 14 (4.4%)
+M8 - 14 (4.4%)
+M30 - 14 (4.4%)
+```
 
-  ```
+Here's an example with additional arguments
+
+```
+ - Using json file path: data/data.json
+ - Number of entries to display: 12
+M22 - 16 (5.1%)
+M6 - 16 (5.1%)
+M40 - 14 (4.4%)
+M8 - 14 (4.4%)
+M30 - 14 (4.4%)
+M24 - 13 (4.1%)
+M28 - 13 (4.1%)
+M9 - 12 (3.8%)
+M13 - 11 (3.5%)
+M20 - 11 (3.5%)
+M16 - 11 (3.5%)
+M14 - 10 (3.2%)
+```
+
+```bash
+npm run test
+```
+Should display 
+```
+  JSON File Address Repository
+    ✓ Fail gracefull when pointed at non existing file
+    ✓ Load addresses and group by outward code
+
+
+  2 passing (6ms)
+```
 
 I have also added test coverage as a runnable script
 
@@ -95,6 +135,26 @@ npm run coverage
 
 Which should output something along the lines of (appended to result of the unit tests as seen above)
 ```
+  JSON File Address Repository
+    ✓ Fail gracefull when pointed at non existing file
+    ✓ Load addresses and group by outward code
 
 
+  2 passing (7ms)
+
+----------------------------|---------|----------|---------|---------|-------------------
+File                        | % Stmts | % Branch | % Funcs | % Lines | Uncovered Line #s 
+----------------------------|---------|----------|---------|---------|-------------------
+All files                   |     100 |      100 |     100 |     100 |                   
+ src/classes                |     100 |      100 |     100 |     100 |                   
+  Group.ts                  |     100 |      100 |     100 |     100 |                   
+ src/repositories           |     100 |      100 |     100 |     100 |                   
+  JsonAddressRepository.ts  |     100 |      100 |     100 |     100 |                   
+ src/repositories/abstracts |     100 |      100 |     100 |     100 |                   
+  AddressRepository.ts      |     100 |      100 |     100 |     100 |                   
+ src/utilities              |     100 |      100 |     100 |     100 |                   
+  GroupsToHistogram.ts      |     100 |      100 |     100 |     100 |                   
+ tests                      |     100 |      100 |     100 |     100 |                   
+  postcode.test.ts          |     100 |      100 |     100 |     100 |                   
+----------------------------|---------|----------|---------|---------|-------------------
 ```
